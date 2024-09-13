@@ -1,1 +1,1 @@
-gg.toast("Hiiiiiiiiiii")
+gg.alert("สามารถติดต่อสอบถามได้ทาง\n FB : สนฉัตร มาลาคุณ")
