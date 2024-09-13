@@ -1,1 +1,1 @@
-gg.alert('Wellcome')
+gg.toast("Hiiiiiiiiiii")
