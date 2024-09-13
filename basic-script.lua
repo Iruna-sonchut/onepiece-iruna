@@ -1,4 +1,38 @@
-local json = require("dkjson")
+function tableToJson(tbl)
+    local result = "{"
+    for k, v in pairs(tbl) do
+        if type(k) == "string" then
+            result = result .. '"' .. k .. '":'
+        end
+
+        if type(v) == "table" then
+            result = result .. tableToJson(v)
+        elseif type(v) == "string" then
+            result = result .. '"' .. v .. '"'
+        elseif type(v) == "boolean" then
+            result = result .. tostring(v)
+        else
+            result = result .. v
+        end
+        result = result .. ","
+    end
+    -- ใช้ :sub เพื่อลบ comma สุดท้าย
+    if result:sub(-1) == "," then
+        result = result:sub(1, -2)
+    end
+    result = result .. "}"
+    return result
+end
+
+local data = {
+    name = "John",
+    age = 30,
+    skills = { "Lua", "Java", "Python" },
+    isDeveloper = true
+}
+
+print(tableToJson(data))
+
 
 function AddList(name, address, offset, type, value, status, save)
     local self = {}
@@ -175,9 +209,9 @@ function starting()
 end
 
 hide_name,body_address = nil,nil
-gg.alert('hi')
+
 script = gg.makeRequest("https://raw.githubusercontent.com/Iruna-sonchut/onepiece-iruna/main/script_status.json").content
-script = json.encode(script)
+script = tableToJson(script)
 gg.alert(toString(script))
 gg.clearResults()
 clearSaveList = gg.getListItems()
