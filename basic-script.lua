@@ -178,7 +178,7 @@ hide_name,body_address = nil,nil
 
 script = gg.makeRequest("https://raw.githubusercontent.com/Iruna-sonchut/onepiece-iruna/main/script_status.json").content
 script = json.encode(script)
-gg.alert(script)
+gg.alert(toString(script))
 gg.clearResults()
 clearSaveList = gg.getListItems()
 gg.removeListItems(clearSaveList)
