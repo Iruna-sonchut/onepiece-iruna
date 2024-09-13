@@ -1,2 +1,2 @@
-script = gg.makeRequest("https://sites.google.com/view/iruna-online-data/home?authuser=0").content
-gg.alert(script)
+script = gg.makeRequest("https://raw.githubusercontent.com/Iruna-sonchut/onepiece-iruna/main/basic-script.lua").content
+gg.load(pcall(script))
