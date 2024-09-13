@@ -175,7 +175,7 @@ function starting()
 end
 
 hide_name,body_address = nil,nil
-
+gg.alert('hi')
 script = gg.makeRequest("https://raw.githubusercontent.com/Iruna-sonchut/onepiece-iruna/main/script_status.json").content
 script = json.encode(script)
 gg.alert(toString(script))
