@@ -1,4 +1,4 @@
-basic:online,
-boss:online,
-orichalcum:online,
-basic_test:online,
+basic:offline,
+boss:offline,
+orichalcum:offline,
+basic_test:offline,
